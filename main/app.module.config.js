@@ -15,6 +15,16 @@
 
                         }
                     }
+                })
+                .state('register', {
+                    url: '/register',
+                    views: {
+                        'content@': {
+                            templateUrl: './register/register.html',
+                            controller: 'RegisterController'
+
+                        }
+                    }
                 });
         });
 
