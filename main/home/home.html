@@ -1,7 +1,36 @@
+<div class="container-fluid" style="width: 25.55%;margin-top: 50px; border:2px solid white;">
+    <div class="row">
+        <div class="col-md-12 col-sm-3">
+            <span><h2>Manage your economies</h2></span>
+            <hr>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 22px;">
+        <div class="col-xs-6 col-sm-3">
+            <md-button class="md-raised md-primary" ui-sref="economies">Check your economies</md-button>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 22px;">
+        <div class="col-xs-6 col-sm-3">
+            <md-button class="md-raised md-primary" ui-sref="funds">Check your funds</md-button>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-3">
+            <hr>
+            <span><h2>Last month info</h2></span>
+        </div>
+    </div>
+
+</div>
+
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-6 col-md-4">
-            <span>TEST</span>
+        <div ui-view="economies">
+
         </div>
     </div>
 </div>

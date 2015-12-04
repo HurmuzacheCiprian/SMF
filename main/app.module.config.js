@@ -35,6 +35,16 @@
 
                         }
                     }
+                })
+                .state('economies', {
+                    url: '/economies',
+                    views: {
+                        'content@': {
+                            templateUrl: './economies/economies.html',
+                            controller: 'EconomiesController'
+
+                        }
+                    }
                 });
         });
 
