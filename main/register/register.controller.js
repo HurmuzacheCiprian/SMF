@@ -6,8 +6,15 @@
 
     var RegisterController = function ($scope) {
         $scope.alreadyUsedUserName = false;
+
         $scope.register = function(userName, firstName, lastName, password) {
-            console.log('Register user '+userName);
+            checkAlreadyRegisteredUser(userName);
+
+        };
+
+
+        //TODO this will be moved to the RegisterService
+        function checkAlreadyRegisteredUser(userName) {
             if(userName == 'gigi') {
                 $scope.alreadyUsedUserName = true;
             } else {

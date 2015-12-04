@@ -12,7 +12,7 @@
             <div class="modal-body" style="background: #eee">
                 <form class="form col-md-12 center-block">
                     <div class="form-group">
-                        <span ng-show="alreadyUsedUserName == true">The user {{userName}} is already in use</span>
+                        <span ng-show="alreadyUsedUserName == true" style="color:red"><b>The user {{userName}} is already in use</b></span>
                         <input type="text" class="form-control input-lg" placeholder="Username..." ng-model="userName" ng-required="true">
                     </div>
                     <div class="form-group">
@@ -26,6 +26,9 @@
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary btn-lg btn-block" ng-click="register(userName,firstName,lastName,password)">Register</button>
+                    </div>
+                    <div class="form-group">
+                        <span class="pull-right"><a ui-sref="login">Back to login</a>
                     </div>
                 </form>
             </div>

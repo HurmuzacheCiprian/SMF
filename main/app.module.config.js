@@ -4,10 +4,10 @@
 
     angular.module('smf')
         .config(function ($stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise('/home');
+            $urlRouterProvider.otherwise('/login');
             $stateProvider
-                .state('home', {
-                    url: '/home',
+                .state('login', {
+                    url: '/login',
                     views: {
                         'content@': {
                             templateUrl: './login/login.html',
