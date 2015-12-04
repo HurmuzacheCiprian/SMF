@@ -4,16 +4,18 @@
 (function () {
     var app = angular.module('smf');
 
-    var LoginController = function ($scope, LoginService) {
+    var LoginController = function ($scope, $state, LoginService) {
         $scope.incorrectCredentials = false;
         $scope.signIn = function (userName, password) {
-            if(userName == 'gigi') {
 
+            //TODO this will be replaced by a call to LoginService
+            if(userName == 'gigi' && password == 'gigi') {
+                $state.go('home');
             }
         }
     };
 
-    app.controller('LoginController', ['$scope', 'LoginService', LoginController]);
+    app.controller('LoginController', ['$scope','$state', 'LoginService', LoginController]);
 
 
 })();

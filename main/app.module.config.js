@@ -25,6 +25,16 @@
 
                         }
                     }
+                })
+                .state('home', {
+                    url: '/home',
+                    views: {
+                        'content@': {
+                            templateUrl: './home/home.html',
+                            controller: 'HomeController'
+
+                        }
+                    }
                 });
         });
 
