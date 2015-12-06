@@ -1,4 +1,4 @@
-<div class="container-fluid" style="width: 25.55%;margin-top: 50px; border:2px solid white;">
+<div class="container-fluid" style="width: 30.55%;margin-top: 50px; border:2px solid white;">
     <div class="row">
         <div class="col-md-12 col-sm-3">
             <span><h2>Manage your economies</h2></span>
@@ -7,17 +7,17 @@
     </div>
     <div class="row" style="margin-top: 22px;">
         <div class="col-xs-6 col-sm-3">
-            <md-button class="md-raised md-primary" ui-sref="economies">Check your economies</md-button>
+            <md-button class="md-raised md-primary" ui-sref="home.economies">Check your economies</md-button>
         </div>
     </div>
     <div class="row" style="margin-top: 22px;">
         <div class="col-xs-6 col-sm-3">
-            <md-button class="md-raised md-primary" ui-sref="funds">Check your funds</md-button>
+            <md-button class="md-raised md-primary" ui-sref="home.funds">Check your funds</md-button>
         </div>
     </div>
     <div class="row" style="margin-top: 22px;">
         <div class="col-xs-6 col-sm-3">
-            <md-button class="md-raised md-primary" ui-sref="funds">Check your expenses</md-button>
+            <md-button class="md-raised md-primary" ui-sref="home.expenses">Check your expenses</md-button>
         </div>
     </div>
     <br>
@@ -32,10 +32,11 @@
 
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top: 50px; border:2px solid white;">
+    <hr>
     <div class="row">
-        <div ui-view="economies">
-
+        <div class="col-md-12 col-sm-3">
+            <div autoscroll="true" ui-view></div>
         </div>
     </div>
 </div>

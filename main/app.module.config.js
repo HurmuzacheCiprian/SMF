@@ -32,21 +32,20 @@
                         'content@': {
                             templateUrl: './home/home.html',
                             controller: 'HomeController'
-
                         }
                     }
                 })
-                .state('economies', {
-                    url: '/economies',
-                    views: {
-                        'content@': {
-                            templateUrl: './economies/economies.html',
-                            controller: 'EconomiesController'
-
-                        }
-                    }
+                .state('home.economies', {
+                    templateUrl: './economies/economies.html',
+                    controller: 'EconomiesController'
+                })
+                .state('home.funds', {
+                    templateUrl: './funds/funds.html',
+                    controller: 'FundsController'
+                 })
+                .state('home.expenses', {
+                    templateUrl: './expenses/expenses.html',
+                    controller: 'ExpensesController'
                 });
         });
-
-
 })();
