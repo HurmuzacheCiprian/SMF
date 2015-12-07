@@ -26,6 +26,14 @@ CREATE TABLE IF NOT EXISTS App_User_Economies (
 	user_id BIGINT REFERENCES App_User(id)	
 );
 
+CREATE TABLE IF NOT EXISTS App_User_Expenses (
+	id BIGINT PRIMARY KEY,
+	category VARCHAR(50),
+	date DATE,
+	amount NUMERIC
+	user_id BIG INT REFERENCES App_User(id)
+);
+
 
 drop table App_User_Funds;
 drop table App_User_Economies;
