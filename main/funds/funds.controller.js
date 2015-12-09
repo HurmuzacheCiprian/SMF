@@ -4,15 +4,15 @@
 (function () {
     var app = angular.module('smf');
 
-    var FundsController = function ($scope, ngTableParams, FundsService) {
+    var FundsController = function ($scope, ngTableParams, FundsService, LoginService) {
         $scope.tableParams = new ngTableParams(
             {
                 filter: {
-                    fundName:"C"
+                    fundName: "C"
                 }
             }, {
                 getData: function (params) {
-                    return FundsService.getFunds("gigi").then(
+                    return FundsService.getFunds(LoginService.loggedUser).then(
                         function (data) {
                             params.total(data.data.funds.length);
                             return data.data.funds;
@@ -25,6 +25,6 @@
         );
     };
 
-    app.controller('FundsController', ['$scope', 'ngTableParams', 'FundsService', FundsController]);
+    app.controller('FundsController', ['$scope', 'ngTableParams', 'FundsService', 'LoginService', FundsController]);
 
 })();

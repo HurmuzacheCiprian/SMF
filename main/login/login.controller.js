@@ -4,7 +4,7 @@
 (function () {
     var app = angular.module('smf');
 
-    var LoginController = function ($scope, $state, LoginService) {
+    var LoginController = function ($scope, $rootScope, $state, LoginService) {
         $scope.incorrectCredentials = false;
         $scope.signIn = function (userName, password) {
 
@@ -12,8 +12,8 @@
                 .then(function (data) {
                     if (data.data.ok == true) {
                         $scope.incorrectCredentials = false;
-                        $scope.loggedUser = userName;
-                        
+                        LoginService.loggedUser = userName;
+
                         $state.go('home');
                     } else {
                         console.log('Redirecting to login');
@@ -28,7 +28,7 @@
         }
     };
 
-    app.controller('LoginController', ['$scope', '$state', 'LoginService', LoginController]);
+    app.controller('LoginController', ['$scope', '$rootScope', '$state', 'LoginService', LoginController]);
 
 
 })();
