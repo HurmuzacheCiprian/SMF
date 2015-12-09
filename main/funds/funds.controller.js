@@ -1,13 +1,30 @@
 /**
  * Created by cipriach on 04.12.2015.
  */
-(function() {
+(function () {
     var app = angular.module('smf');
 
-    var FundsController = function($scope) {
-
+    var FundsController = function ($scope, ngTableParams, FundsService) {
+        $scope.tableParams = new ngTableParams(
+            {
+                filter: {
+                    fundName:"C"
+                }
+            }, {
+                getData: function (params) {
+                    return FundsService.getFunds("gigi").then(
+                        function (data) {
+                            params.total(data.data.funds.length);
+                            return data.data.funds;
+                        }, function (error) {
+                            console.log(error);
+                        }
+                    )
+                }
+            }
+        );
     };
 
-    app.controller('FundsController',['$scope',FundsController]);
+    app.controller('FundsController', ['$scope', 'ngTableParams', 'FundsService', FundsController]);
 
 })();

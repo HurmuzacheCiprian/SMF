@@ -8,14 +8,27 @@
         $scope.incorrectCredentials = false;
         $scope.signIn = function (userName, password) {
 
-            //TODO this will be replaced by a call to LoginService
-            if(userName == 'gigi' && password == 'gigi') {
-                $state.go('home');
-            }
+            LoginService.checkLoginCredentials(userName, password)
+                .then(function (data) {
+                    if (data.data.ok == true) {
+                        $scope.incorrectCredentials = false;
+                        $scope.loggedUser = userName;
+                        
+                        $state.go('home');
+                    } else {
+                        console.log('Redirecting to login');
+                        $scope.incorrectCredentials = true;
+                        $state.go('login');
+                    }
+                }, function (error) {
+                    $scope.incorrectCredentials = true;
+                    console.log('Redirecting to login');
+                    $state.go('login');
+                })
         }
     };
 
-    app.controller('LoginController', ['$scope','$state', 'LoginService', LoginController]);
+    app.controller('LoginController', ['$scope', '$state', 'LoginService', LoginController]);
 
 
 })();
